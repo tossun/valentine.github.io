@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Will you be my Valentine?</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', 'Arial Rounded MT Bold', sans-serif;
+      background: linear-gradient(135deg, #ffdee9, #b5fffc);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+    }
+
+    .container {
+      background: white;
+      padding: 40px 50px;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      max-width: 400px;
+      width: 100%;
+    }
+
+    h1 {
+      color: #ff4d6d;
+      margin-bottom: 20px;
+    }
+
+    img {
+      width: 200px;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      position: relative;
+      height: 80px;
+    }
+
+    button {
+      border: none;
+      border-radius: 999px;
+      padding: 15px 30px;
+      font-size: 18px;
+      cursor: pointer;
+      position: absolute;
+      transition: transform 0.2s ease;
+    }
+
+    #yes {
+      background: #ff4d6d;
+      color: white;
+      font-size: 22px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    #no {
+      background: #ddd;
+      color: #333;
+      top: 60px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .yay {
+      font-size: 48px;
+      color: #ff4d6d;
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="content">
+    <h1>Will you be my Valentine?</h1>
+    <img src="https://img.freepik.com/premium-vector/cute-bear-holding-heart-cartoon-thanks-donation-icon-vector-illustration_617647-67.jpg" alt="Cute bear holding a heart" />
+
+    <div class="buttons">
+      <button id="yes">Yes 💖</button>
+      <button id="no">No</button>
+    </div>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById('no');
+    const yesBtn = document.getElementById('yes');
+    const content = document.getElementById('content');
+
+    noBtn.addEventListener('mouseenter', () => {
+      const x = Math.random() * 200 - 100;
+      const y = Math.random() * 100 - 50;
+      noBtn.style.transform = `translate(${x}px, ${y}px)`;
+    });
+
+    yesBtn.addEventListener('click', () => {
+      content.innerHTML = `
+        <div class="yay">YAY!! &lt;3</div>
+        <img src="https://media3.giphy.com/media/v1.Y2lkPTZjMDliOTUybDViczE5ZXUzd3hsN2Vwanl2NmFlandubHl2ZjZwZTlpZXdxNGdjZyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/14qb1Uhf40ndw4/giphy.gif" alt="Happy gif" style="width:250px; margin:20px 0;" />
+        <p style="font-size:20px;">Best decision ever 💘</p>
+      `;
+    });
+  </script>
+</body>
+</html>
